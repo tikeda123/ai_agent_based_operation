@@ -64,57 +64,77 @@
 - SRAが承認された解決策を実行
 - 実行結果を監視し、成功を確認
 
-## 必要要件
+必要要件
 
-- Python 3.8以上
-- pip (Pythonパッケージ管理ツール)
+Python 3.8以上
+pip (Pythonパッケージ管理ツール)
+OpenAI API キー（Chat GPT APIを使用するため）
 
-## インストール手順
+インストール手順
 
-1. このリポジトリをクローンします：
-```bash
-git clone https://github.com/tikeda123/ai_agent_based_operation.git
+このリポジトリをクローンします：
+
+bashCopygit clone https://github.com/tikeda123/ai_agent_based_operation.git
 cd ai_agent_based_operation
-```
 
-2. 仮想環境を作成し、有効化します：
-```bash
-# Windows の場合
+仮想環境を作成し、有効化します：
+
+bashCopy# Windows の場合
 python -m venv venv
 .\venv\Scripts\activate
 
 # macOS/Linux の場合
 python3 -m venv venv
 source venv/bin/activate
-```
 
-3. 必要なパッケージをインストールします：
-```bash
-pip install -r requirements.txt
-```
+必要なパッケージをインストールします：
 
-## 使用方法
+bashCopypip install -r requirements.txt
 
-1. 設定ファイルの準備：
-   - `config.example.yml` を `config.yml` にコピーします
-   - `config.yml` を自分の環境に合わせて編集します
+OpenAI APIキーを環境変数として設定します：
 
-2. プログラムの実行：
-```bash
-python run.py
-```
+bashCopy# Windows の場合（コマンドプロンプト）
+set OPENAI_API_KEY=your_openai_api_key
 
-## トラブルシューティング
+# Windows の場合（PowerShell）
+$env:OPENAI_API_KEY="your_openai_api_key"
 
+# macOS/Linux の場合
+export OPENAI_API_KEY="your_openai_api_key"
+※ your_openai_api_key は、OpenAIから取得したAPIキーに置き換えてください。
+※ この環境変数は、システムを再起動すると消えるため、永続的に設定する場合は環境変数の設定をシステムの設定から行うか、起動スクリプトに追加してください。
+使用方法
+
+設定ファイルの準備：
+
+config.example.yml を config.yml にコピーします
+config.yml を自分の環境に合わせて編集します
+
+
+プログラムの実行：
+
+bashCopypython run.py
+トラブルシューティング
 よくある問題と解決方法：
 
-1. モジュールが見つからないエラー
-   - 仮想環境が有効化されているか確認してください
-   - `pip install -r requirements.txt` を再実行してください
+モジュールが見つからないエラー
 
-2. 設定ファイルエラー
-   - `config.yml` の形式が正しいか確認してください
+仮想環境が有効化されているか確認してください
+pip install -r requirements.txt を再実行してください
 
-## ライセンス
 
-このプロジェクトは [MITライセンス](LICENSE) の下で公開されています。
+設定ファイルエラー
+
+config.yml の形式が正しいか確認してください
+
+
+OpenAI API関連のエラー
+
+環境変数 OPENAI_API_KEY が正しく設定されているか確認してください
+APIキーが有効であることを確認してください
+API使用量の制限に達していないか確認してください
+
+
+
+ライセンス
+このプロジェクトは MITライセンス の下で公開されています。
