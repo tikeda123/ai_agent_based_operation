@@ -64,36 +64,39 @@
 - SRAが承認された解決策を実行
 - 実行結果を監視し、成功を確認
 
-必要要件
+## 必要要件
 
-Python 3.8以上
-pip (Pythonパッケージ管理ツール)
-OpenAI API キー（Chat GPT APIを使用するため）
+- Python 3.8以上
+- pip (Pythonパッケージ管理ツール)
+- OpenAI API キー（Chat GPT APIを使用するため）
 
-インストール手順
+## インストール手順
 
-このリポジトリをクローンします：
-
-bashCopygit clone https://github.com/tikeda123/ai_agent_based_operation.git
+1. このリポジトリをクローンします：
+```bash
+git clone https://github.com/tikeda123/ai_agent_based_operation.git
 cd ai_agent_based_operation
+```
 
-仮想環境を作成し、有効化します：
-
-bashCopy# Windows の場合
+2. 仮想環境を作成し、有効化します：
+```bash
+# Windows の場合
 python -m venv venv
 .\venv\Scripts\activate
 
 # macOS/Linux の場合
 python3 -m venv venv
 source venv/bin/activate
+```
 
-必要なパッケージをインストールします：
+3. 必要なパッケージをインストールします：
+```bash
+pip install -r requirements.txt
+```
 
-bashCopypip install -r requirements.txt
-
-OpenAI APIキーを環境変数として設定します：
-
-bashCopy# Windows の場合（コマンドプロンプト）
+4. OpenAI APIキーを環境変数として設定します：
+```bash
+# Windows の場合（コマンドプロンプト）
 set OPENAI_API_KEY=your_openai_api_key
 
 # Windows の場合（PowerShell）
@@ -101,40 +104,38 @@ $env:OPENAI_API_KEY="your_openai_api_key"
 
 # macOS/Linux の場合
 export OPENAI_API_KEY="your_openai_api_key"
-※ your_openai_api_key は、OpenAIから取得したAPIキーに置き換えてください。
+```
+
+※ `your_openai_api_key` は、OpenAIから取得したAPIキーに置き換えてください。
 ※ この環境変数は、システムを再起動すると消えるため、永続的に設定する場合は環境変数の設定をシステムの設定から行うか、起動スクリプトに追加してください。
-使用方法
 
-設定ファイルの準備：
+## 使用方法
 
-config.example.yml を config.yml にコピーします
-config.yml を自分の環境に合わせて編集します
+1. 設定ファイルの準備：
+   - `config.example.yml` を `config.yml` にコピーします
+   - `config.yml` を自分の環境に合わせて編集します
 
+2. プログラムの実行：
+```bash
+python run.py
+```
 
-プログラムの実行：
+## トラブルシューティング
 
-bashCopypython run.py
-トラブルシューティング
 よくある問題と解決方法：
 
-モジュールが見つからないエラー
+1. モジュールが見つからないエラー
+   - 仮想環境が有効化されているか確認してください
+   - `pip install -r requirements.txt` を再実行してください
 
-仮想環境が有効化されているか確認してください
-pip install -r requirements.txt を再実行してください
+2. 設定ファイルエラー
+   - `config.yml` の形式が正しいか確認してください
 
+3. OpenAI API関連のエラー
+   - 環境変数 `OPENAI_API_KEY` が正しく設定されているか確認してください
+   - APIキーが有効であることを確認してください
+   - API使用量の制限に達していないか確認してください
 
-設定ファイルエラー
+## ライセンス
 
-config.yml の形式が正しいか確認してください
-
-
-OpenAI API関連のエラー
-
-環境変数 OPENAI_API_KEY が正しく設定されているか確認してください
-APIキーが有効であることを確認してください
-API使用量の制限に達していないか確認してください
-
-
-
-ライセンス
-このプロジェクトは MITライセンス の下で公開されています。
+このプロジェクトは [MITライセンス](LICENSE) の下で公開されています。
