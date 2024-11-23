@@ -111,11 +111,7 @@ export OPENAI_API_KEY="your_openai_api_key"
 
 ## 使用方法
 
-1. 設定ファイルの準備：
-   - `config.example.yml` を `config.yml` にコピーします
-   - `config.yml` を自分の環境に合わせて編集します
-
-2. プログラムの実行：
+1. プログラムの実行：
 ```bash
 python run.py
 ```
@@ -128,14 +124,7 @@ python run.py
    - 仮想環境が有効化されているか確認してください
    - `pip install -r requirements.txt` を再実行してください
 
-2. 設定ファイルエラー
-   - `config.yml` の形式が正しいか確認してください
-
-3. OpenAI API関連のエラー
+2. OpenAI API関連のエラー
    - 環境変数 `OPENAI_API_KEY` が正しく設定されているか確認してください
    - APIキーが有効であることを確認してください
    - API使用量の制限に達していないか確認してください
-
-## ライセンス
-
-このプロジェクトは [MITライセンス](LICENSE) の下で公開されています。
